@@ -160,27 +160,28 @@ figure
 subplot(411)
 histogram(taus1,Nbins,'Normalization','pdf')
 hold on
-plot(tau1,rhon,'r')
+if P_reset==0, plot(tau1,rhon,'r'), end
 axis([0 1 0 inf])
 title('\rho(\tau_1,\infty)')
+
 subplot(412)
 histogram(RT,Nbins,'Normalization','pdf')
 hold on
-plot(tau1,alphan,'r')
+if P_reset==0, plot(tau1,alphan,'r'), end
 axis([0 1 0 inf])
 title('f_1(\tau_1,\infty)')
 
 subplot(413)
 histogram(APD,Nbins,'Normalization','pdf')
 hold on
-plot(tau2,betan,'r')
+if P_reset==0, plot(tau2,betan,'r'), end
 axis([0 1 0 inf])
 title('f_2(\tau_2,\infty)')
 
 subplot(414)
-histogram(ISI,2*Nbins,'Normalization','pdf')
+histogram(ISI,Nbins,'Normalization','pdf')
 hold on
-plot(tauISI,ISIexactn,'r')
+if P_reset==0, plot(tauISI,ISIexactn,'r'), end
 axis([0 2 0 inf])
 title('f_{ISI}(\tau_{ISI},\infty)')
 
